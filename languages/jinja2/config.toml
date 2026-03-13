@@ -28,3 +28,6 @@ opt_into_language_servers = [
     "tailwindcss-language-server",
     "vscode-html-language-server",
 ]
+
+increase_indent_pattern = "^\\s*\\{%\\s*(if|for|with|block|filter|macro|autoescape|trans|pluralize|call)\\b"
+decrease_indent_pattern = "^\\s*\\{%\\s*(end(if|for|with|block|filter|macro|autoescape|trans|pluralize|call)|else|elif)\\b"

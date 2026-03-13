@@ -1,8 +1,8 @@
 name = "Jinja2 (Plain Text)"
 grammar = "jinja2"
 path_suffixes = ["txt.jinja", "txt.jinja2", "txt.j2"]
-line_comments = ["{#", "#}"]
-block_comment = ["{# ", " #}"]
+block_comment = ["{#", "#}"]
+autoclose_before = " \t\n\r;:.,=}])>"
 brackets = [
   { start = "{%", end = "%}", close = true, newline = false },
   { start = "{{", end = "}}", close = true, newline = false },
@@ -14,3 +14,6 @@ scope_opt_in_language_servers = [
   "jinja2-lsp",
   "vscode-jinja",
 ]
+
+increase_indent_pattern = "^\\s*\\{%\\s*(if|for|with|block|filter|macro|autoescape|trans|pluralize|call)\\b"
+decrease_indent_pattern = "^\\s*\\{%\\s*(end(if|for|with|block|filter|macro|autoescape|trans|pluralize|call)|else|elif)\\b"
