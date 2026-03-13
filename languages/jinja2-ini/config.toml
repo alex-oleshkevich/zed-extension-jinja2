@@ -1,0 +1,16 @@
+name = "Jinja2 (INI)"
+grammar = "jinja2"
+path_suffixes = ["ini.jinja", "ini.jinja2", "ini.j2", "cfg.jinja", "cfg.jinja2", "cfg.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "[", end = "]", close = true, newline = false },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

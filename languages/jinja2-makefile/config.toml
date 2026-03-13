@@ -1,0 +1,15 @@
+name = "Jinja2 (Makefile)"
+grammar = "jinja2"
+path_suffixes = ["Makefile.jinja", "Makefile.jinja2", "Makefile.j2", "makefile.jinja", "makefile.jinja2", "makefile.j2", "mk.jinja", "mk.jinja2", "mk.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

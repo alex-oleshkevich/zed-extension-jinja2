@@ -1,0 +1,16 @@
+name = "Jinja2 (systemd)"
+grammar = "jinja2"
+path_suffixes = ["service.jinja", "service.jinja2", "service.j2", "timer.jinja", "timer.jinja2", "timer.j2", "socket.jinja", "socket.jinja2", "socket.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "[", end = "]", close = true, newline = false },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

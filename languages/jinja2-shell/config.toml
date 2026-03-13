@@ -1,0 +1,17 @@
+name = "Jinja2 (Shell)"
+grammar = "jinja2"
+path_suffixes = ["sh.jinja", "sh.jinja2", "sh.j2", "bash.jinja", "bash.jinja2", "bash.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "[", end = "]", close = true, newline = false },
+  { start = "{", end = "}", close = true, newline = true },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

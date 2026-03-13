@@ -1,0 +1,15 @@
+name = "Jinja2 (dotenv)"
+grammar = "jinja2"
+path_suffixes = ["env.jinja", "env.jinja2", "env.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

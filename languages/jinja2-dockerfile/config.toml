@@ -1,0 +1,16 @@
+name = "Jinja2 (Dockerfile)"
+grammar = "jinja2"
+path_suffixes = ["Dockerfile.jinja", "Dockerfile.jinja2", "Dockerfile.j2", "dockerfile.jinja", "dockerfile.jinja2", "dockerfile.j2"]
+line_comments = ["{#", "#}"]
+block_comment = ["{# ", " #}"]
+brackets = [
+  { start = "{%", end = "%}", close = true, newline = false },
+  { start = "{{", end = "}}", close = true, newline = false },
+  { start = "{#", end = "#}", close = true, newline = false },
+  { start = "(", end = ")", close = true, newline = false },
+  { start = "[", end = "]", close = true, newline = false },
+]
+scope_opt_in_language_servers = [
+  "jinja2-lsp",
+  "vscode-jinja",
+]

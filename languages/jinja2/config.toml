@@ -1,0 +1,30 @@
+name = "Jinja2"
+grammar = "jinja2"
+path_suffixes = ["jinja", "jinja2", "j2"]
+block_comment = ["{#", "#}"]
+autoclose_before = " \t\n\r;:.,=}])>"
+brackets = [
+    { start = "{{", end = "}}", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "{%", end = "%}", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "{#", end = "#}", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "<", end = ">", close = true, newline = true },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "`", end = "`", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "/*", end = " */", close = true, newline = false, not_in = ["comment", "string"] },
+]
+language_servers = ["jinja2-lsp", "..."]
+scope_opt_in_language_servers = [
+    "tailwindcss-language-server",
+    "vscode-html-language-server",
+    "emmet-language-server",
+]
+
+[overrides.string]
+completion_query_characters = ["-"]
+opt_into_language_servers = [
+    "tailwindcss-language-server",
+    "vscode-html-language-server",
+]
